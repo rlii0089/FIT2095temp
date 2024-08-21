@@ -1,0 +1,19 @@
+{
+  "name": "fit2095-assignment-1",
+  "version": "1.0.0",
+  "description": "Raymond's FIT2095 Assignment 1 Source Code",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.infotech.monash.edu/fit2095/fit2095-s2-2024/projects/rlii0089/Assignment-1"
+  },
+  "author": "Raymond Ruimin Li",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
