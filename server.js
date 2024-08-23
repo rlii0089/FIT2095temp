@@ -44,14 +44,6 @@ app.get("/packages/add", function(req, res) {
     res.sendFile(path.join(__dirname, "views", "add-package.html"));
 });
 
-app.get("/drivers/delete", function(req, res) {
-    res.sendFile(path.join(__dirname, "views", "delete-driver.html"));
-});
-
-app.get("/packages/delete", function(req, res) {
-    res.sendFile(path.join(__dirname, "views", "delete-package.html"));
-});
-
 app.post("/drivers", function(req, res) {
     let driverName = req.body.driverName;
     let driverDepartment = req.body.driverDepartment;
@@ -80,14 +72,33 @@ app.post("/packages", function(req, res) {
     res.redirect("/packages");
 });
 
-app.get("/drivers", function(req, res) {
+app.get("/drivers/delete", function(req, res) {
+    res.sendFile(path.join(__dirname, "views", "delete-driver.html"));
+});
+
+app.get("/packages/delete", function(req, res) {
+    res.sendFile(path.join(__dirname, "views", "delete-package.html"));
+});
+
+app.post("/drivers/delete", function(req, res) {
     let driverID = req.body.driverID;
-    driverDatabase = driverDatabase.filter(driver => driver.driverID != driverID);
+    for(let i = 0; i < driverDatabase.length; i++) {
+        if(driverDatabase[i].driverID == driverID) {
+            console.log("Deleting driver with ID: " + driverID);
+            driverDatabase.splice(i, 1);
+            break;
+        }
+    }
     res.redirect("/drivers");
 });
 
-app.get("/packages", function(req, res) {
-    let packageID = req.bodyery.packageID;
-    packageDatabase = packageDatabase.filter(package => package.packageID != packageID);
+app.post("/packages/delete", function(req, res) {
+    let packageID = req.body.packageID;
+    for(let i = 0; i < packageDatabase.length; i++) {
+        if(packageDatabase[i].packageID == packageID) {
+            packageDatabase.splice(i, 1);
+            break;
+        }
+    }
     res.redirect("/packages");
 });
