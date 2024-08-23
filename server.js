@@ -2,6 +2,8 @@ const express = require('express');
 const app = express();
 const ejs = require('ejs');
 
+app.use(express.urlencoded({ extended: true }));
+
 app.engine('html', ejs.renderFile);
 app.set('view engine', 'html');
 
@@ -9,8 +11,6 @@ const path = require('path');
 
 const Driver = require('./models/Driver');
 const Package = require('./models/Package');
-
-app.use(express.urlencoded({ extended: true }));
 
 let driverDatabase = [];
 let packageDatabase = [];
@@ -44,6 +44,13 @@ app.get("/packages/add", function(req, res) {
     res.sendFile(path.join(__dirname, "views", "add-package.html"));
 });
 
+app.get("/drivers/delete", function(req, res) {
+    res.sendFile(path.join(__dirname, "views", "delete-driver.html"));
+});
+
+app.get("/packages/delete", function(req, res) {
+    res.sendFile(path.join(__dirname, "views", "delete-package.html"));
+});
 
 app.post("/drivers", function(req, res) {
     let driverName = req.body.driverName;
@@ -66,8 +73,21 @@ app.post("/packages", function(req, res) {
     let isAllocated = req.body.isAllocated;
     let driverID = req.body.driverID;
 
+    console.log(packageTitle, packageWeight, packageDestination, description, isAllocated, driverID);
+
     let newPackage = new Package(packageTitle, packageWeight, packageDestination, description, isAllocated, driverID);
     packageDatabase.push(newPackage);
     res.redirect("/packages");
 });
 
+app.get("/drivers", function(req, res) {
+    let driverID = req.body.driverID;
+    driverDatabase = driverDatabase.filter(driver => driver.driverID != driverID);
+    res.redirect("/drivers");
+});
+
+app.get("/packages", function(req, res) {
+    let packageID = req.bodyery.packageID;
+    packageDatabase = packageDatabase.filter(package => package.packageID != packageID);
+    res.redirect("/packages");
+});

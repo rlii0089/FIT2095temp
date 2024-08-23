@@ -7,24 +7,24 @@
 </head>
 <body>
     <h1>Package Details Form</h1>
-    <form action="/submit-package" method="post">
+    <form action="/packages" method="post">
         <label for="package-title">Package Title:</label>
-        <input type="text" id="package-title" name="package-title" required><br><br>
+        <input type="text" name="packageTitle" required><br><br>
 
         <label for="package-weight">Package Weight (kg):</label>
-        <input type="number" id="package-weight" name="package-weight" step="0.01" required><br><br>
+        <input type="number" name="packageWeight" step="0.01" required><br><br>
 
         <label for="package-destination">Package Destination:</label>
-        <input type="text" id="package-destination" name="package-destination" required><br><br>
+        <input type="text" name="packageDestination" required><br><br>
 
         <label for="package-description">Package Description:</label>
-        <textarea id="package-description" name="package-description" rows="4" cols="50" required></textarea><br><br>
+        <textarea name="description" rows="4" cols="50" required></textarea><br><br>
 
         <label for="package-allocated">Package is Allocated:</label>
-        <input type="checkbox" id="package-allocated" name="package-allocated"><br><br>
+        <input type="checkbox" name="isAllocated"><br><br>
 
         <label for="driver-id">Driver ID:</label>
-        <input type="text" id="driver-id" name="driver-id" required><br><br>
+        <input type="text" name="driverID" required><br><br>
 
         <button type="submit">Submit</button>
     </form>

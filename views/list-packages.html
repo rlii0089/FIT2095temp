@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Package Details Table</title>
+</head>
+<body>
+    <h1>Package Details</h1>
+    <table>
+        <tr>
+            <th>Package ID</th>
+            <th>Package Title</th>
+            <th>Package Weight</th>
+            <th>Package Destination</th>
+            <th>Package Description</th>
+            <th>Package Created At</th>
+            <th>Package Allocated</th>
+            <th>Package Driver ID</th>
+        </tr>
+        <% for(i=0; i<packages.length; i++) { %>
+            <tr>
+                <td><%= packages[i].packageID %></td>
+                <td><%= packages[i].packageTitle %></td>
+                <td><%= packages[i].packageWeight %></td>
+                <td><%= packages[i].packageDestination %></td>
+                <td><%= packages[i].description %></td>
+                <td><%= packages[i].createdAt %></td>
+                <td><%= packages[i].isAllocated %></td>
+                <td><%= packages[i].driverID %></td>
+            </tr>
+        <% } %>
+    </table>
+</html>

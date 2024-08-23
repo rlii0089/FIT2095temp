@@ -9,17 +9,21 @@
     <h1>Driver Details</h1>
     <table>
         <tr>
+            <th>Driver ID</th>
             <th>Driver Name</th>
             <th>Driver Department</th>
             <th>Driver Licence</th>
             <th>Driver Active</th>
+            <th>Driver Created At</th>
         </tr>
         <% for(i=0; i<drivers.length; i++) { %>
             <tr>
-                <td><%= drivers[i].name %></td>
-                <td><%= drivers[i].department %></td>
-                <td><%= drivers[i].licence %></td>
-                <td><%= drivers[i].active %></td>
+                <td><%= drivers[i].driverID %></td>
+                <td><%= drivers[i].driverName %></td>
+                <td><%= drivers[i].driverDepartment %></td>
+                <td><%= drivers[i].driverLicence %></td>
+                <td><%= drivers[i].driverIsActive %></td>
+                <td><%= drivers[i].driverCreatedAt %></td>
             </tr>
         <% } %>
     </table>
