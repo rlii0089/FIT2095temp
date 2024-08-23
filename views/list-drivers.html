@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Driver Details Table</title>
+</head>
+<body>
+    <h1>Driver Details</h1>
+    <table>
+        <tr>
+            <th>Driver Name</th>
+            <th>Driver Department</th>
+            <th>Driver Licence</th>
+            <th>Driver Active</th>
+        </tr>
+        <% for(i=0; i<drivers.length; i++) { %>
+            <tr>
+                <td><%= drivers[i].name %></td>
+                <td><%= drivers[i].department %></td>
+                <td><%= drivers[i].licence %></td>
+                <td><%= drivers[i].active %></td>
+            </tr>
+        <% } %>
+    </table>
+</body>
+</html>

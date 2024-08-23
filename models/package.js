@@ -1,23 +1,33 @@
 class Package {
-    constructor(packageTitle, packageWeight, packageDestination, description) {
+    nameInitials = 'RL';
+    
+    constructor(packageTitle, packageWeight, packageDestination, description, isAllocated, driverID) {
         this.packageID = this.generatePackageID();
         this.packageTitle = packageTitle;
         this.packageWeight = packageWeight;
         this.packageDestination = packageDestination;
         this.description = description || '';
         this.createdAt = new Date();
-        this.isAllocated = false;  // Default to not allocated
-        this.driverID = null;  // Default to no driver assigned
+        this.isAllocated = isAllocated;
+        this.driverID = driverID;
     }
 
     generatePackageID() {
-        let randomTwoLetters = '';
-        let letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        for (let i = 0; i < 2; i++) {
-            randomTwoLetters += letters.charAt(Math.floor(Math.random() * letters.length));
+        return `P${this.generateRandomLetters(3)}-${this.nameInitials}-${this.generateRandomDigits(3)}`;
+    }
+
+    generateRandomLetters(numberOfLetters) {
+        let randomLetters = '';
+        let lettersChoices = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        for (let i = 0; i < numberOfLetters; i++) {
+            randomLetters += lettersChoices.charAt(Math.floor(Math.random() * lettersChoices.length));
         }
-        let initials = 'RL';
-        let randomThreeDigits = Math.floor(Math.random() * 1000);
-        return `P${randomTwoLetters}-${initials}-${randomThreeDigits}`;
+        return randomLetters;
+    }
+
+    generateRandomDigits(numberOfDigits) {
+        return Math.floor(Math.random() * 10 ** numberOfDigits);
     }
 }
+
+module.exports = Package;
