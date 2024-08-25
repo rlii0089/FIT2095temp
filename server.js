@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const ejs = require('ejs');
 
+app.use(express.static("images"));
 app.use(express.urlencoded({ extended: true }));
 
 app.engine('html', ejs.renderFile);
