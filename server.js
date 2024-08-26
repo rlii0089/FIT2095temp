@@ -44,6 +44,7 @@ app.get("/packages", function(req, res) {
     res.render("list-packages", { packages: packageDatabase }); // Pass packageDatabase to list-packages.html
 });
 
+
 // GET routes for adding drivers
 app.get("/drivers/add", function(req, res) {
     res.sendFile(path.join(__dirname, "views", "add-driver.html"));
@@ -51,7 +52,7 @@ app.get("/drivers/add", function(req, res) {
 
 // GET routes for adding packages
 app.get("/packages/add", function(req, res) {
-    res.sendFile(path.join(__dirname, "views", "add-package.html"));
+    res.render("add-package", { drivers: driverDatabase }); // Pass driverDatabase to add-package.html
 });
 
 // POST routes for adding drivers

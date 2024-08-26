@@ -26,9 +26,16 @@
         <input type="checkbox" name="isAllocated"><br><br>
 
         <label for="driver-id">Driver ID:</label>
-        <input type="text" name="driverID" required><br><br>
+        <select name="driverID">
+            <% for(i=0; i<drivers.length; i++) { %>
+                <option value="<%= drivers[i].driverID %>"><%= drivers[i].driverID %></option>
+            <% } %>
+        </select><br><br>
 
         <button type="submit">Submit</button>
     </form>
 </body>
+<footer>
+    <p>&copy; 2024 Package Delivery Management Application. All rights reserved.</p>
+</footer>
 </html>
