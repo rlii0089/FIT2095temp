@@ -1,38 +1,78 @@
-<html>
-    <head>
-        <title>Assignment-1</title>
-    </head>
-    <body>
-        <img src="/pdma-logo.png" alt="PDM Logo" style="width: 200px; height: 200px;">
-        <h1>Homepage</h1>
-        <table>
-            <tr>
-                <th>Link</th>
-                <th>Description</th>
-            </tr>
-            <tr>
-                <td><a href="/drivers/add">Add Driver</a></td>
-                <td>Add a new driver</td>
-            </tr>
-            <tr>
-                <td><a href="/packages/add">Add Package</a></td>
-                <td>Add a new package</td>
-            </tr>
-            <tr>
-                <td><a href="/drivers">List Drivers</a></td>
-                <td>View all drivers</td>
-            </tr>
-            <tr>
-                <td><a href="/packages">List Packages</a></td>
-                <td>View all packages</td>
-            </tr>
-            <tr>
-                <td><a href="/drivers/delete">Delete Driver</a></td>
-                <td>Delete a driver</td>
-            </tr>
-            <tr>
-                <td><a href="/packages/delete">Delete Package</a></td>
-                <td>Delete a package</td>
-            </tr>
-    </body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta tags for responsive design -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Title of the page -->
+    <title>Package Delivery Management Application</title>
+
+    <!-- Bootstrap CSS link -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        /* Optional custom styling */
+        .header-img {
+            max-width: 200px;
+            height: auto;
+        }
+        .main-title {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Container for the content -->
+    <div class="container">
+        <!-- Header with centered image -->
+        <header class="text-center my-4">
+            <img src="/pdma-logo.png" alt="PDM Logo" class="header-img">
+            <h1 class="main-title">Homepage</h1>
+        </header>
+
+        <!-- Table for links and descriptions -->
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Link</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="/drivers/add" class="btn btn-link">Add Driver</a></td>
+                    <td>Add a new driver</td>
+                </tr>
+                <tr>
+                    <td><a href="/packages/add" class="btn btn-link">Add Package</a></td>
+                    <td>Add a new package</td>
+                </tr>
+                <tr>
+                    <td><a href="/drivers" class="btn btn-link">List Drivers</a></td>
+                    <td>View all drivers</td>
+                </tr>
+                <tr>
+                    <td><a href="/packages" class="btn btn-link">List Packages</a></td>
+                    <td>View all packages</td>
+                </tr>
+                <tr>
+                    <td><a href="/drivers/delete" class="btn btn-link">Delete Driver</a></td>
+                    <td>Delete a driver</td>
+                </tr>
+                <tr>
+                    <td><a href="/packages/delete" class="btn btn-link">Delete Package</a></td>
+                    <td>Delete a package</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Package Delivery Management Application. All rights reserved.</p>
+    </footer>
+
+</body>
 </html>
